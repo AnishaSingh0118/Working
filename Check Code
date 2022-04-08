@@ -1,0 +1,22 @@
+<button class="modal__btn dialog_submit_button"{{#if single_footer_button}} aria-label="{{t 'Close this dialog window' }}" data-micromodal-close{{/if}} id="btnSubmit" type="button" value="Submit" disabled="disabled"   >
+
+<script type="text/javascript">
+    function EnableDisable(txtPassportNumber) {
+        //Reference the Button.
+        var btnSubmit = document.getElementById("btnSubmit");
+ 
+        //Verify the TextBox value.
+        if (txtPassportNumber.value.trim() != "") {
+            //Enable the TextBox when TextBox has value.
+            btnSubmit.disabled = false;
+        } else {
+            //Disable the TextBox when TextBox is empty.
+            btnSubmit.disabled = true;
+        }
+    };
+</script>
+
+
+
+
+<input id="edit_bot_name" type="text" name="bot_name" class="edit_bot_name required" value="{{bot.full_name}}" maxlength=50 required onkeyup="EnableDisable(this)"/>
